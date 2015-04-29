@@ -7,18 +7,23 @@
 <body ng-controller='mainCtrl'>
 
 	<div>
-		<input placeholder='Quote text' ng-model='textInput'><input placeholder='Quote author' ng-model='authorInput'><button ng-click='addQuote()'>Add Quote</button>
+		<input placeholder='Quote text' ng-model='textInput'>
+		<input placeholder='Quote author' ng-model='authorInput'>
+		<button ng-click='addQuote()'>Add Quote</button>
 	</div>
 	
 	<div>
-		<input placeholder='Quote text'><input placeholder='Quote author'><button>Remove Quote</button>
+		<input placeholder='Text of quote to delete' ng-model='removeText'>
+		<button ng-click='deleteQuote()'>Remove Quote</button>
 	</div>
 	
 	<div>
-		<input placeholder='Quote text'><input placeholder='Quote author'><button>Filter Quotes</button>
+		<input placeholder='Quote text'>
+		<input placeholder='Quote author'>
+		<button>Filter Quotes</button>
 	</div>
 
-	<div class='quote' ng-repeat='quote in quotes'>
+	<div ng-model='getQuotes' class='quote' ng-repeat='quote in quotes'>
 		<div>"{{quote.text}}"</div>
 		<div align="right" >--{{quote.author}}</div>
 	</div>

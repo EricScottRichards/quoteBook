@@ -13,4 +13,9 @@ app.controller('mainCtrl', function($scope, dataService){
 		$scope.authorInput = '';
 	}
 
+	$scope.deleteQuote = function(){
+		dataService.removeData($scope.removeText, dataService.quotes);
+		$scope.removeText='';
+	};
+
 });

@@ -26,10 +26,10 @@ app.service('dataService', function(){
 		
 	};
 	
-	this.removeData = function(str, arr){
-		for (var i = 0; i < arr.length; i++){
-			if (arr[i].text === str){
-				arr.splice(arr[i], 1);
+	this.removeData = function(str){
+		for (var i = 0; i < quotes.length; i++){
+			if (str === quotes[i].text){
+				quotes.splice(i, 1);
 			}
 		}
 	};
