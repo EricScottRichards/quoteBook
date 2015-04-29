@@ -6,14 +6,19 @@
 
 <body ng-controller='mainCtrl'>
 
-	<input placeholder='Quote text'><input placeholder='Quote author'><button>Add Quote</button>
+	<div>
+		<input placeholder='Quote text' ng-model='textInput'><input placeholder='Quote author' ng-model='authorInput'><button ng-click='addQuote()'>Add Quote</button>
+	</div>
 	
-	<input placeholder='Quote text'><input placeholder='Quote author'><button>Remove Quote</button>
+	<div>
+		<input placeholder='Quote text'><input placeholder='Quote author'><button>Remove Quote</button>
+	</div>
 	
-	<input placeholder='Quote text'><input placeholder='Quote author'><button>Filter Quotes</button>
+	<div>
+		<input placeholder='Quote text'><input placeholder='Quote author'><button>Filter Quotes</button>
+	</div>
 
-
-	<div ng-repeat='quote in quotes'>
+	<div class='quote' ng-repeat='quote in quotes'>
 		<div>"{{quote.text}}"</div>
 		<div align="right" >--{{quote.author}}</div>
 	</div>
