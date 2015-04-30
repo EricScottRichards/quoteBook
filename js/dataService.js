@@ -34,4 +34,6 @@ app.service('dataService', function(){
 		}
 	};
 
+	// this.filterData = function ()
+
 });

@@ -1,8 +1,32 @@
 body {
 	margin: auto;
 	width: 500px;
+	background: #FFFFDB;
+}
+
+h1 {
+	width: 110%
+	font-family: Verdana, Geneva, sans-serif;
+	font-size: 3em;
+	text-align: center;
+}
+
+select {
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+input {
+	margin: auto;
+	flex-grow: 1;
+}
+
+.controls {
+	width: 100%;
+	margin-bottom: 15px;
+	display: flex;
 }
 
 .quote {
-	border: solid black 1px;
+	border: dotted black 1px;
 }

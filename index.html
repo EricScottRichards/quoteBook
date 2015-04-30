@@ -6,24 +6,29 @@
 
 <body ng-controller='mainCtrl'>
 
-	<div>
+	<h1>Quote Book</h1>
+	<select ng-model='property' ng-options='option.value as option.label for option in options' ng-change='changeToggle()'>
+		<option value="" disabled selected>Select an action to perform.</option>
+	</select>
+
+	<div class='controls' ng-show='addToggle'>
 		<input placeholder='Quote text' ng-model='textInput'>
 		<input placeholder='Quote author' ng-model='authorInput'>
 		<button ng-click='addQuote()'>Add Quote</button>
 	</div>
 	
-	<div>
+	<div class='controls' ng-show='removeToggle'>
 		<input placeholder='Text of quote to delete' ng-model='removeText'>
 		<button ng-click='deleteQuote()'>Remove Quote</button>
 	</div>
 	
-	<div>
-		<input placeholder='Quote text'>
-		<input placeholder='Quote author'>
-		<button>Filter Quotes</button>
+	<div class='controls' ng-show='filterToggle'>
+		<input placeholder='Filter by text' ng-model='filterInput.text'>
+		<input placeholder='Filter by author' ng-model='filterInput.author'>
+		<!-- <button>Filter Quotes</button> -->
 	</div>
 
-	<div ng-model='getQuotes' class='quote' ng-repeat='quote in quotes'>
+	<div ng-model='getQuotes' class='quote' ng-repeat='quote in quotes | filter:filterInput'>
 		<div>"{{quote.text}}"</div>
 		<div align="right" >--{{quote.author}}</div>
 	</div>
