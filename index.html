@@ -4,33 +4,40 @@
 	<link rel='stylesheet' type='type/css' href='style.css'>
 </head>
 
-<body ng-controller='mainCtrl'>
+<body background='img/background.jpg' ng-controller='mainCtrl'>
 
-	<h1>Quote Book</h1>
-	<select ng-model='property' ng-options='option.value as option.label for option in options' ng-change='changeToggle()'>
-		<option value="" disabled selected>Select an action to perform.</option>
-	</select>
+	<div class='contentWrapper'>
+		
+		<h1>Quote Book</h1>
+		
+		<div align='right'>
+		<select ng-model='property' ng-options='option.value as option.label for option in options' ng-change='changeToggle()'>
+			<option value="" disabled selected>Select an action to perform</option>
+		</select>
+		</div>
 
-	<div class='controls' ng-show='addToggle'>
-		<input placeholder='Quote text' ng-model='textInput'>
-		<input placeholder='Quote author' ng-model='authorInput'>
-		<button ng-click='addQuote()'>Add Quote</button>
-	</div>
-	
-	<div class='controls' ng-show='removeToggle'>
-		<input placeholder='Text of quote to delete' ng-model='removeText'>
-		<button ng-click='deleteQuote()'>Remove Quote</button>
-	</div>
-	
-	<div class='controls' ng-show='filterToggle'>
-		<input placeholder='Filter by text' ng-model='filterInput.text'>
-		<input placeholder='Filter by author' ng-model='filterInput.author'>
-		<!-- <button>Filter Quotes</button> -->
-	</div>
+		<div class='controls' ng-show='addToggle'>
+			<input placeholder='Quote text' ng-model='textInput'>
+			<input placeholder='Quote author' ng-model='authorInput'>
+			<button ng-click='addQuote()'>Add Quote</button>
+		</div>
+		
+		<div class='controls' ng-show='removeToggle'>
+			<input placeholder='Text of quote to delete' ng-model='removeText'>
+			<button ng-click='deleteQuote()'>Remove Quote</button>
+		</div>
+		
+		<div class='controls' ng-show='filterToggle'>
+			<input placeholder='Filter by text' ng-model='filterInput.text'>
+			<input placeholder='Filter by author' ng-model='filterInput.author'>
+			<!-- <button>Filter Quotes</button> -->
+		</div>
 
-	<div ng-model='getQuotes' class='quote' ng-repeat='quote in quotes | filter:filterInput'>
-		<div>"{{quote.text}}"</div>
-		<div align="right" >--{{quote.author}}</div>
+		<div ng-model='getQuotes' class='quote' ng-repeat='quote in quotes | filter:filterInput'>
+			<div><strong>"{{quote.text}}"</strong></div>
+			<div align="right" >--{{quote.author}}</div>
+		</div>
+
 	</div>
 
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.min.js'></script>
