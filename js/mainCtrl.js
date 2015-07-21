@@ -1,16 +1,16 @@
 var app = angular.module('quoteBook');
 app.controller('mainCtrl', function($scope, dataService){
 
-	$scope.getQuotes = function(){
+	// $scope.getQuotes = function(){
 		$scope.quotes = dataService.getData();
-	}
+	// }
 	
-	$scope.getQuotes();
+	// $scope.getQuotes();
 
 	$scope.addQuote = function(){
-		dataService.addData($scope.textInput, $scope.authorInput);
-		$scope.textInput = '';
-		$scope.authorInput = '';
+		dataService.addData($scope.input);
+		// $scope.textInput = '';
+		// $scope.authorInput = '';
 	}
 
 	$scope.deleteQuote = function(){
@@ -46,5 +46,44 @@ app.controller('mainCtrl', function($scope, dataService){
 		{label: 'Remove a quote by text', value: 'remove'},
 		{label: 'Filter quotes by text or author', value: 'filter'}
 	];
+
+  $scope.squareToggle = false;
+
+  $scope.squareToggler = function(){
+  	$scope.squareToggle = !$scope.squareToggle;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 });

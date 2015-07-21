@@ -4,10 +4,14 @@
 	<link rel='stylesheet' type='type/css' href='style.css'>
 </head>
 
-<body background='img/background.jpg' ng-controller='mainCtrl'>
+<body ng-controller='mainCtrl'>
 
 	<div class='contentWrapper'>
 		
+		<<button ng-click="squareToggler()">Square Toggle Thing</button>
+
+		<div ng-show="squareToggle" style="height:500px; width: 500px; background-color: blue"></div>
+
 		<h1>Quote Book</h1>
 		
 		<div align='right'>
@@ -16,9 +20,17 @@
 		</select>
 		</div>
 
+		<<select name="" multiple>
+			<option value=""></option>
+			<option value=""></option>
+			<option value=""></option>
+			<option value=""></option>
+			option
+		</select>
+
 		<div class='controls' ng-show='addToggle'>
-			<input placeholder='Quote text' ng-model='textInput'>
-			<input placeholder='Quote author' ng-model='authorInput'>
+			<input placeholder='Quote text' ng-model='input.text'>
+			<input placeholder='Quote author' ng-model='input.author'>
 			<button ng-click='addQuote()'>Add Quote</button>
 		</div>
 		
@@ -33,7 +45,7 @@
 			<!-- <button>Filter Quotes</button> -->
 		</div>
 
-		<div ng-model='getQuotes' class='quote' ng-repeat='quote in quotes | filter:filterInput'>
+		<div class='quote' ng-repeat='quote in quotes | filter:filterInput'>
 			<div><strong>"{{quote.text}}"</strong></div>
 			<div align="right" >--{{quote.author}}</div>
 		</div>

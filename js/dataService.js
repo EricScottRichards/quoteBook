@@ -15,10 +15,10 @@ app.service('dataService', function(){
 		return quotes
 	};
 	
-	this.addData = function(txt, auth){
+	this.addData = function(data){
 		var newQuote = {
-			text: txt,
-			author: auth
+			text: data.text,
+			author: data.author
 		};
 		if ((newQuote.text) && (newQuote.author)){
 			quotes.push(newQuote);

@@ -6,7 +6,7 @@ html {
 
 body {
 	width: 100%;
-	/*background: #FFFFDB;*/
+	background: black;
 }
 
 h1 {
@@ -14,21 +14,21 @@ h1 {
 	font-size: 3em;
 	text-align: center;
 	color: rgba(247, 247, 247, 1);
-	opacity: 1;
+	opacity: .95;
 }
 
 select {
 	width: 40%;
 	margin-right: 2.5%;
 	margin-bottom: 15px;
-	opacity: 1;
+	opacity: .95;
 	border-radius: 10px;
 }
 
 input {
 	margin-right: 10px;
 	flex-grow: 1;
-	opacity: 1;
+	opacity: .95;
 	border-radius: 10px;
 }
 
@@ -38,23 +38,24 @@ input {
 	margin-left: auto;
 	margin-right: auto;
 	width: 70%;
-	background-color: rgba(0, 0, 0, .85);
+	/*background-color: rgba(0, 0, 0, .85);
   border: 1px solid black;
-  opacity: 0.85;
+  opacity: 0.85;*/
   border-radius: 40px;
+  background:url(img/background.jpg);
 }
 
 .controls {
 	width: 95%;
 	margin-bottom: 15px;
-	opacity: 1;
+	opacity: .95;
 	display: flex;
 	margin-right: auto;
 	margin-left: auto;
 }
 
 .quote {
-	opacity: 1;
+	opacity: .95;
 	width: 95%;
 	border: dotted black 1px;
 	background: rgba(247, 247, 247, 1);
